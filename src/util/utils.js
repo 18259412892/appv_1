@@ -21,15 +21,32 @@ export const BooleanNumber = function (values) {
     ...values
   }
 };
+
+/**
+* @method
+* @desc:  设置本地缓存
+* @author:  zhangyunjiang
+* @creatDate 2020-10-31 01:07:44
+* @param {*}  val
+*/
 export const locSetItem = function (set, values) {
   return localStorage.setItem(set, values)
 }
+/**
+* @method
+* @desc:  设置本地缓存
+* @author:  zhangyunjiang
+* @creatDate 2020-10-31 01:07:44
+* @param {*}  val
+*/
 export const locGetItem = function (value) {
-
-  let _value;
-  return localStorage.getItem(value)
-    ?
-    (typeof value == 'string' ? JSON.parse(localStorage.getItem(value))
-      : localStorage.getItem(value)
-    ) : '';
+  let _value = '';
+  if(localStorage.getItem(value)){
+    if(typeof value == 'string'){
+      _value =  JSON.parse(localStorage.getItem(value))
+    }else{
+      _value = localStorage.getItem(value)
+    }
+  }
+  return _value;
 }

@@ -72,6 +72,7 @@ class HttpRequset{
         }else if(method == 'post'){
             opts['data'] = opts.data||{};
         }
+        console.log(this.baseURL ,'--this.baseURL ',method,opts);
         this.setInterceptors(instace,opts.url);
         return instace(opts);
     }

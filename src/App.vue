@@ -14,12 +14,12 @@ import {
 export default {
 
     created() {
-        // getBannerList({
-        //     page: 1
-        // });
-        // getBannerCommon({
-        //     page_size: 2
-        // })
+        getBannerList({
+            page: 1
+        });
+        getBannerCommon({
+            page_size: 2
+        })
     }
 }
 </script>>

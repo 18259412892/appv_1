@@ -1,9 +1,10 @@
 import * as types from './action-type'
+import {locSetItem,locGetItem} from '@/util/utils'
 export default {
     state:{
         token:'',
         ajaxTokens:[],
-        menuApi:false,//菜单api
+        menuApi:locGetItem('menuApi')||false,//菜单api
     },
     mutations:{
         [types.SET_MENU_API](state,playod){
@@ -23,6 +24,7 @@ export default {
         */
         [types.SET_MENU_API]({commit}, arg){
            const _false = true;
+           locSetItem('menuApi',true)
            commit(types.SET_MENU_API,_false)
         }
     },

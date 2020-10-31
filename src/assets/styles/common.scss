@@ -8,6 +8,7 @@ body,#app {
     height: 100%;
     color:#141414;
 }
-.g-content-reg-log .ant-layout-content {
+.ant-layout-content {
     min-height: calc(100vh - 60px);
+    background: #fff;
 }

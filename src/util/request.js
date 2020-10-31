@@ -3,6 +3,7 @@ import qs from 'qs';
 import {message} from 'ant-design-vue';
 import store from '@/store';
 import  * as types from '@/store/action-type';
+let msgeLoading = message;
 class HttpRequset{
     constructor(props){
         // const _VUE_APP_URL_METOURL = process.env.VUE_APP_UR
@@ -15,7 +16,7 @@ class HttpRequset{
         instance.interceptors.request.use(config=>{
             if(Object.keys(this.queue).length == 0){
                 // true
-               
+                msgeLoading.loading({ content: 'Loading...' });
             }
             this.queue[url] = true;
             let Cancel = axios.CancelToken;
@@ -29,6 +30,11 @@ class HttpRequset{
 
         instance.interceptors.response.use(res=>{
             delete this.queue[url];
+            if (Object.keys(this.queue).length == 0) {
+                setTimeout(() => {
+                  msgeLoading.destroy()
+                }, 3000)
+             }
             if(res.code == 200){
                 return Promise.resolve(res.data)
             }else{
@@ -36,7 +42,11 @@ class HttpRequset{
             }
         },err=>{
             delete this.queue[url];
-
+            if (Object.keys(this.queue).length == 0) {
+                setTimeout(() => {
+                  msgeLoading.destroy()
+                }, 3000)
+             }
             //处理其他异常状态
             return Promise.reject(err)
         })

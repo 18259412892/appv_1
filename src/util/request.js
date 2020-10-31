@@ -67,7 +67,6 @@ class HttpRequset{
             opts['params'] = opts.params || {};
         }else if(method == 'post'){
             opts['data'] = opts.data||{};
-            opts['data']['member_token'] = '333'
         }
         this.setInterceptors(instace,opts.url);
         return instace(opts);

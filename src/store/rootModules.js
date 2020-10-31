@@ -3,7 +3,7 @@ export default {
     state:{
         token:'',
         ajaxTokens:[],
-        menuApi:true,//菜单api
+        menuApi:false,//菜单api
     },
     mutations:{
         [types.SET_MENU_API](state,playod){
@@ -22,7 +22,7 @@ export default {
         * @param {obj}  arg
         */
         [types.SET_MENU_API]({commit}, arg){
-           const _false = false;
+           const _false = true;
            commit(types.SET_MENU_API,_false)
         }
     },

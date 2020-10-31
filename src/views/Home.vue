@@ -1,7 +1,7 @@
 <template>
 <div>
-    <Loading num="2" v-if="menuApi" />
-    <template v-if="!menuApi">
+    <Loading num="2" v-if="!menuApi" />
+    <template v-if="menuApi">
         index
     </template>
 </div>

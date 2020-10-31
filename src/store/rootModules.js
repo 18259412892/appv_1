@@ -3,7 +3,7 @@ export default {
     state:{
         token:'',
         ajaxTokens:[],
-        menuApi:false,//菜单api
+        menuApi:true,//菜单api
     },
     mutations:{
         [types.SET_MENU_API](state,playod){

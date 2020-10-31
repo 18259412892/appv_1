@@ -1,19 +1,22 @@
 <template>
 <div id="app">
     <template v-if="menuApi">
-        <a-layout>
-            <a-layout-header>
-                <PageHeader />
-            </a-layout-header>
-            <a-layout :class="[['/login','/reg'].includes(this.$route.path) && 'g-content-reg-log']">
-                <a-layout-content>
-                    <a-spin tip="加载中...">
+        <div class="header-layout-demo-basic">
+            <a-layout>
+                <a-layout-header>
+                    <PageHeader />
+                </a-layout-header>
+                <a-layout :class="[!['/login','/reg'].includes(this.$route.path) && 'g-content-reg-log']">
+                    <a-layout-content>
+                        <!--
+                        <a-spin tip="加载中..." v-if="!['/login','/reg'].includes(this.$route.path)">
+                            <router-view />
+                        </a-spin>-->
                         <router-view />
-                    </a-spin>
-                </a-layout-content>
-
+                    </a-layout-content>
+                </a-layout>
             </a-layout>
-        </a-layout>
+        </div>
     </template>
     <template v-if="!menuApi">
         <router-view />
@@ -46,4 +49,4 @@ export default {
         })
     }
 }
-</script>>
+</script>

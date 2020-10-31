@@ -1,0 +1,38 @@
+
+.header-layout-demo-basic{
+    .header-login{
+        color:#fff;
+        text-align: center;
+        font-size: 20px;
+    }
+    .header-menu-lis,.heaer-login-reg{
+        background: transparent;
+        color:#fff;
+        height: 65px;
+        line-height: 65px;
+    }
+    .header-menu-lis{
+        .ant-menu-submenu-selected{
+            padding: 0 20px;
+            background: #fff;
+            color: #141414;
+        }
+    }
+}
+.ant-menu-submenu-popup {
+    min-height: 200px;
+    left: 0;right: 0;
+}
+.ant-menu-submenu-popup.ant-menu-light {
+    left: 0 !important;
+    right: 0;
+    top:70px !important;
+    min-height: 200px !important;
+}
+.ant-menu-submenu-popup .ant-menu {
+    display: flex;
+    min-height: 200px !important;
+    .ant-menu-item-selected{
+        background: transparent;
+    }
+}

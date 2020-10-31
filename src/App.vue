@@ -1,9 +1,6 @@
 <template>
 <div id="app">
-    <div id="nav">
-        <router-link to="/">Home</router-link> |
-        <router-link to="/about">About</router-link>
-    </div>
+
     <router-view />
 </div>
 </template>
@@ -13,37 +10,16 @@ import {
     getBannerList,
     getBannerCommon
 } from './api/public.js'
+
 export default {
+
     created() {
-        getBannerList({
-            page: 1
-        });
-        getBannerCommon({
-            page_size: 2
-        })
+        // getBannerList({
+        //     page: 1
+        // });
+        // getBannerCommon({
+        //     page_size: 2
+        // })
     }
 }
 </script>>
-
-<style lang="scss">
-#app {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
-}
-
-#nav {
-    padding: 30px;
-
-    a {
-        font-weight: bold;
-        color: #2c3e50;
-
-        &.router-link-exact-active {
-            color: #42b983;
-        }
-    }
-}
-</style>

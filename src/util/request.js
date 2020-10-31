@@ -51,7 +51,6 @@ class HttpRequset{
         const _API_URL = `${process.env['VUE_APP_API_'+_URL.toUpperCase()]}`;
         this.baseURL = _API_URL;
         const {method = 'post'} = opts;
-        console.log(_API_URL,'--_API_URL');
         let pattern = localStorage.getItem('pattern')
         if (pattern == 'ucs') {
             opts[ method == 'get' ? 'params' : 'data']['user_token'] = '44'

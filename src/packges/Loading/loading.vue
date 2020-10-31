@@ -2,10 +2,10 @@
 <div class="t-loading-body">
     <div :class="classs">
         <template v-if="num == 1">
-            <div>l</div>
+            <div>L</div>
             <div>o</div>
             <div>a</div>
-            <div>d</div>
+            <div>D</div>
             <div>i</div>
             <div>n</div>
             <div>g</div>
@@ -25,10 +25,10 @@
             </span>
         </template>
         <template v-if="num == 3">
-            <div>l</div>
+            <div>L</div>
             <div>o</div>
             <div>a</div>
-            <div>d</div>
+            <div>D</div>
             <div>i</div>
             <div>n</div>
             <div>g</div>

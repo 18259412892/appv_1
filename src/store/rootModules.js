@@ -1,12 +1,16 @@
 import * as types from './action-type'
 export default {
     state:{
+        token:'',
         ajaxTokens:[],
         menuApi:true,//菜单api
     },
     mutations:{
-        [types.SET_MENU_API](state,playoud){
-            state.menuApi = playoud
+        [types.SET_MENU_API](state,playod){
+            state.menuApi = playod;
+        },
+        [types.SET_REQUESET_TOKENS](state,playod){
+            state.ajaxTokens = [...state.ajaxTokens,playod];
         }
     },
     actions:{

@@ -1,6 +1,8 @@
 import axios from 'axios';
 import qs from 'qs';
 import {message} from 'ant-design-vue';
+import store from '@/store';
+import  * as types from '@/store/action-type';
 class HttpRequset{
     constructor(props){
         // const _VUE_APP_URL_METOURL = process.env.VUE_APP_UR
@@ -13,11 +15,13 @@ class HttpRequset{
         instance.interceptors.request.use(config=>{
             if(Object.keys(this.queue).length == 0){
                 // true
+               
             }
             this.queue[url] = true;
             let Cancel = axios.CancelToken;
             config.CancelToken = new Cancel(function(c){
                 //请求切换断开接口
+                store.commit(types.SET_REQUESET_TOKENS,c)
             });
             config.headers.common['Authorization'] = 'Bearer '  +'tokens345345354543';
             return config;

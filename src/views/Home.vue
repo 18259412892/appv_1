@@ -34,8 +34,8 @@ export default {
     },
     created() {
         setTimeout(() => {
-            // this[types.SET_MENU_API]();
-        }, 3000)
+            this[types.SET_MENU_API]();
+        }, 5000)
     }
 };
 </script>

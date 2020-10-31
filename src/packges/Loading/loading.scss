@@ -11,7 +11,7 @@
     $loading1: #{&-1};
     position: absolute;
     top: 50%;
-
+    left: 50%;
     -webkit-transform: translate(-50%, -50%);
     -moz-transform: translate(-50%, -50%);
     -mos-transform: translate(-50%, -50%);
@@ -24,12 +24,10 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    cursor: default;
     &-1 {
-        position: absolute;
-        left: 50%;
         padding: 5% 0%;
         overflow: hidden;
-        cursor: default;
         min-width: 33.25em;
         div {
             width: 2.5em;
@@ -238,8 +236,6 @@
     }
 
     &-2 {
-        left: 45%;
-        cursor: default;
         .circle {
             position: absolute;
             top: 50%;
@@ -573,8 +569,6 @@
     }
 
     &-3 {
-        left: 50%;
-        cursor: default;
         min-width: 33.25em;
         div {
             position: relative;

@@ -1,4 +1,13 @@
 
+.ant-layout-header{
+    background: $hbg;
+    .ant-menu-submenu{
+        padding:0 20px;
+    }
+    .tive .submenu-title-wrapper{
+        color:$block !important;
+    }
+}
 .header-layout-demo-basic{
     .header-login{
         color:#fff;
@@ -18,6 +27,7 @@
             color: #141414;
         }
     }
+   
 }
 .ant-menu-submenu-popup {
     min-height: 200px;

@@ -1,7 +1,7 @@
 @include blockquote(loading) {
     &-body {
         -webkit-tap-highlight-color: transparent;
-        background-color: #62a6bd;
+        background-color: $hbg;
         font-size: 100%;
         font-family: open sans;
         font-weight: 100;

@@ -30,7 +30,13 @@ export const BooleanNumber = function (values) {
 * @param {*}  val
 */
 export const locSetItem = function (set, values) {
-  return localStorage.setItem(set, values)
+  let _parms;
+  if(typeof values == 'object'){
+    _parms = JSON.stringify(values)
+  } else{
+    _parms = values
+  }
+  return localStorage.setItem(set, _parms)
 }
 /**
 * @method

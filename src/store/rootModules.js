@@ -11,7 +11,12 @@ export default {
             state.menuApi = playod;
         },
         [types.SET_REQUESET_TOKENS](state,playod){
+            if(playod == 'clear'){
+                state.ajaxTokens = []
+            } else {
             state.ajaxTokens = [...state.ajaxTokens,playod];
+
+            }
         }
     },
     actions:{

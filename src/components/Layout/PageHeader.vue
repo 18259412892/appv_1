@@ -29,10 +29,21 @@
                 <span slot="title" class="submenu-title-wrapper">
                     表单
                 </span>
-                <a-menu-item key="/info1">
+                <a-menu-item key="/info3">
                     info
                 </a-menu-item>
                 <a-menu-item key="/modal2">
+                    Modal 对话框
+                </a-menu-item>
+            </a-sub-menu>
+            <a-sub-menu class="header-menu-lis1">
+                <span slot="title" class="submenu-title-wrapper">
+                    图表
+                </span>
+                <a-menu-item key="/Nestedpies">
+                    Nestedpies
+                </a-menu-item>
+                <a-menu-item key="/modal23">
                     Modal 对话框
                 </a-menu-item>
             </a-sub-menu>

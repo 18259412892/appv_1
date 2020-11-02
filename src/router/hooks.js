@@ -1,8 +1,9 @@
-import store from '@/store/index.js'
+import store from '@/store/index.js';
+import * as types from '@/store/action-type.js'
 export default {
     'cancleaTokens':async function (to, from, next) {
-        const tokens = store.state.ajaxTokens;
-        tokens.forEach(fn => fn())
+        store.state.ajaxTokens.forEach(fn=> fn && fn());
+        store.commit(types.SET_REQUESET_TOKENS,'clear');
         next();
     },
     'isLogin': async function (to, form, next) {

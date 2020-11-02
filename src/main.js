@@ -7,6 +7,8 @@ import  'ant-design-vue/dist/antd.css';
 import '@/assets/styles/index.scss'
 Vue.config.productionTip = false
 Vue.use(Antd)
+import echarts from 'echarts'
+Vue.prototype.$echarts = echarts
 new Vue({
   router,
   store,

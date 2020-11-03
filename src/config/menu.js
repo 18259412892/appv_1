@@ -25,8 +25,8 @@ export default  [
                     path:'/info'
                 },
                 {
-                    name:'对话框',
-                    path:'对话框'
+                    name:'Form',
+                    path:'/form'
                 }
             ]
         },

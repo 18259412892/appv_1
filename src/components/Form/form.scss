@@ -1,0 +1,13 @@
+@include blockquote(form) {
+    &{
+        .ant-form-inline{
+            .t-form-list{
+                .t-form-list-item {
+                    .ant-form-item-control-wrapper{
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}

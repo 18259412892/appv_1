@@ -1,6 +1,6 @@
 <template>
 <div>
-    <From :footerBtn="true" @change="changefn">
+    <From :footerBtn="true" @change="changefn" formLayout="inline">
         <template v-slot:form>
             <FormList :data="rules.formList" :footer="true" :label="true" />
             <div style="justify-content: center;text-align: center;">

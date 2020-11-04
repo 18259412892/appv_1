@@ -3,14 +3,14 @@
     <a-row :gutter="[16,8]">
         <a-col v-for="(item, index) in data || []" :key="index" :span="6">
             <a-form-item class="t-form-list-item" :label="label && item.label" :label-col="formItemLayout.labelCol" :wrapper-col="formItemLayout.wrapperCol">
-                <a-input v-if="!['checked'].includes(item.type)" :placeholder="item.name" v-decorator="[
+                <a-input v-if="!['checked','select','number'].includes(item.type)" :placeholder="item.name" v-decorator="[
               item.name,
               {
                 rules: item.rules,
                 initialValue: (setValue && setValue[item.name]) || '',
               },
             ]" :type="item.type">
-                    <a-icon slot="prefix" :type="item.icon || 'user'" style="color: rgba(0, 0, 0, 0.25)" />
+                    <a-icon slot="prefix" v-if="item.icon" :type="item.icon || 'user'" style="color: rgba(0, 0, 0, 0.25)" />
                 </a-input>
                 <a-checkbox v-if="['checked'].includes(item.type)" v-decorator="[
               item.name,
@@ -21,6 +21,24 @@
             ]">
                     {{ item.name }}
                 </a-checkbox>
+                <a-select v-if="['select'].includes(item.type)" allowClear :label="label && item.label" style="width: 100%" v-decorator="[
+              item.name,
+              {
+                rules: item.rules,
+                initialValue: (setValue && setValue[item.name]) || false,
+              },
+            ]">
+                    <a-select-option v-value="item.id" v-for="(v,key) in item.data" :key="key">
+                        {{v.name}}
+                    </a-select-option>
+                </a-select>
+                <a-input-number v-if="['number'].includes(item.type)" allowClear : min="1" :max="10" style="width: 100%" v-decorator="[
+              item.name,
+              {
+                rules: item.rules,
+                initialValue: (setValue && setValue[item.name]) || false,
+              },
+            ]" />
             </a-form-item>
         </a-col>
     </a-row>
@@ -41,7 +59,7 @@ import {
     BooleanNumber
 } from "@/util/utils";
 export default {
-    name: "tFromList",
+    name: "tFormList",
     props: ["data", "footer", "label", "setValue", 'formLayout'],
     data() {
         return {

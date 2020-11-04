@@ -1,0 +1,33 @@
+@include blockquote(layout-info) {
+    background-color: $white;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.1);
+    padding: $num10;
+    margin-bottom: $num20;
+    border-radius: $num5;
+    &{
+        &-header{
+            display:flex;
+            min-height:38px;
+            align-items: center;
+            background: #e9edf2;
+            font-size:14px;
+            text-indent: 10px;
+            position: relative;
+            &::after{
+                content: ' ';
+                border:solid $num5 $primary;
+                border: solid 2px #409eff;
+                /* font-size: 20px; */
+                height: 100%;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                border-radius:$num5;
+            }
+        }
+        &-content{
+            padding: $num10;
+            font-size:14px;
+        }
+    }
+}

@@ -21,13 +21,13 @@ export default  [
             name:'表单',
             children:[
                 {
-                    name:'info',
-                    path:'/info'
-                },
-                {
                     name:'Form',
                     path:'/form'
-                }
+                },
+                {
+                    name:'FormInfo',
+                    path:'/forminfo'
+                },
             ]
         },
         {

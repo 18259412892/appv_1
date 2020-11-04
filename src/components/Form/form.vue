@@ -24,7 +24,6 @@ export default {
             name: "normal_login",
         });
     },
-    computed: {},
     methods: {
         handleSubmit(e) {
             e.preventDefault();

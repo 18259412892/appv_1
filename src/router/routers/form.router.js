@@ -7,4 +7,12 @@ export default [
             needLogin:false
         }
     },
+    {
+        path: '/forminfo',
+        name: 'forminfo',
+        component: ()=>import(/*webpackChunkName: "Orderlist"*/'@/views/Form/forminfo.vue'),
+        meta:{
+            needLogin:false
+        }
+    },
 ]

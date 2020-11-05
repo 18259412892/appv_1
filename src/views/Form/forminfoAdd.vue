@@ -4,17 +4,17 @@
         <template v-slot:form>
             <Layoutinfo content title="基本信息">
                 <template v-slot:content>
-                    <FormList :data="rules.formList" :footer="true" :label="true" />
+                    <FormList :data="rules.formList" :footer="true" :label="true" :setValue="qs" />
                 </template>
             </Layoutinfo>
             <Layoutinfo content title="基本信息1">
                 <template v-slot:content>
-                    <FormList :data="rules.formList1" :footer="true" :label="true" />
+                    <FormList :data="rules.formList1" :footer="true" :label="true" :setValue="qs" />
                 </template>
             </Layoutinfo>
             <Layoutinfo content title="基本信息2">
                 <template v-slot:content>
-                    <FormList :data="rules.formList2" :footer="true" :label="true" />
+                    <FormList :data="rules.formList2" :footer="true" :label="true" :setValue="qs" />
                 </template>
             </Layoutinfo>
             <div style="justify-content: center;text-align: center;">
@@ -98,6 +98,28 @@ export default {
                         rules: [{
                             required: false,
                             message: "Please input your number!",
+                        }],
+                    },
+                    {
+                        name: "inputComp",
+                        type: "inputComp",
+                        label: "inputComp",
+                        labeKey: {
+                            input: 'inputComp',
+                            select: 'inputCompSelect'
+                        },
+                        selectData: [{
+                                id: 11,
+                                name: '+86'
+                            },
+                            {
+                                id: 131,
+                                name: '+87'
+                            },
+                        ],
+                        rules: [{
+                            required: false,
+                            message: "Please input your inputComp!",
                         }],
                     },
 
@@ -195,11 +217,12 @@ export default {
                     },
                 ]
             },
+            qs: {}
         }
     },
     methods: {
-        changefn() {
-
+        changefn(parms) {
+            console.log(JSON.stringify(parms))
         }
     }
 }

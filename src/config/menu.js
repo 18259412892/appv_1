@@ -25,9 +25,14 @@ export default  [
                     path:'/form'
                 },
                 {
-                    name:'FormInfo',
-                    path:'/forminfo'
+                    name:'forminfoAdd',
+                    path:'/forminfoAdd'
                 },
+                {
+                    name:'forminfoEdit',
+                    path:'/forminfoEdit'
+                },
+               
             ]
         },
         {

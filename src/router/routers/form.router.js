@@ -8,9 +8,17 @@ export default [
         }
     },
     {
-        path: '/forminfo',
-        name: 'forminfo',
-        component: ()=>import(/*webpackChunkName: "Orderlist"*/'@/views/Form/forminfo.vue'),
+        path: '/forminfoAdd',
+        name: 'forminfoAdd',
+        component: ()=>import(/*webpackChunkName: "Orderlist"*/'@/views/Form/forminfoAdd.vue'),
+        meta:{
+            needLogin:false
+        }
+    },
+    {
+        path: '/forminfoEdit',
+        name: 'forminfoEdit',
+        component: ()=>import(/*webpackChunkName: "Orderlist"*/'@/views/Form/forminfoEdit.vue'),
         meta:{
             needLogin:false
         }

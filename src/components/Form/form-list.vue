@@ -1,9 +1,9 @@
 <template>
 <div class="t-form-list">
-    <a-row :gutter="[16,8]">
+    <a-row :gutter="[16, 8]">
         <a-col v-for="(item, index) in data || []" :key="index" :span="6">
-            <a-form-item class="t-form-list-item" :label="label && item.label" :label-col="formItemLayout.labelCol" :wrapper-col="formItemLayout.wrapperCol">
-                <a-input v-if="!['checked','select','number'].includes(item.type)" :placeholder="item.name" v-decorator="[
+            <a-form-item :class="['t-form-list-item' , ['inputComp'].includes(item.type) && 't-form-l-itm-ipcom']" :label="label && item.label" v-bind="['inputComp'].includes(item.type) ? formItemLayout1 : ''" :label-col="formItemLayout.labelCol" :wrapper-col="formItemLayout.wrapperCol">
+                <a-input v-if="!['checked', 'select', 'number','inputComp'].includes(item.type)" :placeholder="item.name" v-decorator="[
               item.name,
               {
                 rules: item.rules,
@@ -16,7 +16,11 @@
               item.name,
               {
                 rules: item.rules,
-                initialValue: (setValue && setValue[item.name]) || false,
+                valuePropName: 'checked',
+                initialValue:
+                  (setValue && setValue[item.name]) == 1
+                    ? true
+                    : false || false,
               },
             ]">
                     {{ item.name }}
@@ -28,17 +32,38 @@
                 initialValue: (setValue && setValue[item.name]) || false,
               },
             ]">
-                    <a-select-option v-value="item.id" v-for="(v,key) in item.data" :key="key">
-                        {{v.name}}
+                    <a-select-option v-value="item.id" v-for="(v, key) in item.data" :key="key">
+                        {{ v.name }}
                     </a-select-option>
                 </a-select>
-                <a-input-number v-if="['number'].includes(item.type)" allowClear : min="1" :max="10" style="width: 100%" v-decorator="[
-              item.name,
-              {
-                rules: item.rules,
-                initialValue: (setValue && setValue[item.name]) || false,
-              },
-            ]" />
+                <a-input-number style="width: 100%" v-if="['number'].includes(item.type)" :label="label && item.label" v-decorator="[
+                    item.name||'',
+                    {
+                        rules: item.rules,
+                        initialValue: (setValue && setValue[item.name]) || '',
+                    },
+                    ]" />
+                <a-input v-if="['inputComp'].includes(item.type)" v-decorator="[
+                 item.labeKey &&item.labeKey.input,
+                    {
+                        initialValue:  (setValue && item.labeKey &&  setValue[item.labeKey.input]) || '',
+                        rules: [
+                        {
+                            rules: item.rules,
+                            required: true,
+                            message: item.msg || '',
+                        },
+                        ],
+                    },
+                    ]" style="width: 100%">
+
+                    <a-select slot="addonBefore" v-decorator="[item.labeKey &&item.labeKey.select , { 
+                        initialValue: 
+                        (setValue && item.labeKey &&  setValue[item.labeKey.select]) ||  
+                        (item.selectData.length > 0 && item.selectData[0].id) || ''}]" style="width: 100px">
+                        <a-select-option :value="k.id" v-for="(k , kes) in item.selectData" :key="kes"> {{k.name}}</a-select-option>
+                    </a-select>
+                </a-input>
             </a-form-item>
         </a-col>
     </a-row>
@@ -60,10 +85,28 @@ import {
 } from "@/util/utils";
 export default {
     name: "tFormList",
-    props: ["data", "footer", "label", "setValue", 'formLayout'],
+    props: ["data", "footer", "label", "setValue", "formLayout"],
     data() {
         return {
             isLoading: false,
+            formItemLayout1: {
+                labelCol: {
+                    xs: {
+                        span: 24
+                    },
+                    sm: {
+                        span: 8
+                    },
+                },
+                wrapperCol: {
+                    xs: {
+                        span: 24
+                    },
+                    sm: {
+                        span: 16
+                    },
+                },
+            }
         };
     },
     computed: {
@@ -71,12 +114,12 @@ export default {
             const {
                 formLayout
             } = this;
-            return formLayout === 'horizontal' ? {
+            return formLayout === "horizontal" ? {
                 labelCol: {
-                    span: 4
+                    span: 4,
                 },
                 wrapperCol: {
-                    span: 14
+                    span: 14,
                 },
             } : {};
         },

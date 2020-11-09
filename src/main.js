@@ -9,6 +9,7 @@ Vue.config.productionTip = false
 Vue.use(Antd)
 import echarts from 'echarts'
 Vue.prototype.$echarts = echarts
+import './packges/Echarts/echartscss.js'
 new Vue({
   router,
   store,

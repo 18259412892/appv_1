@@ -1,0 +1,26 @@
+@include blockquote(card) {
+    &{
+        .title{
+            font-size: $font-size;
+            color:$info;
+
+        }
+        .value{
+            font-size: $font-size25;
+            color: $block;
+            margin-top: $num5;
+            letter-spacing: 1px;
+        }
+        .chart{
+            height: $num50;
+        }
+        .line{
+            margin: $num10 0;
+            border-top:1px solid $info;
+        }
+        .total{
+            font-size: $font-size;
+            color:#666;
+        }
+    }
+}

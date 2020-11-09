@@ -69,7 +69,7 @@ export default {
                         type: "select",
                         label: "选择",
                         rules: [{
-                            required: true,
+                            required: false,
                             message: "Please input your select!",
                         }],
                         data: [{

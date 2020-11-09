@@ -1,0 +1,19 @@
+@include blockquote(echarts-top-view) {
+    &{
+        .list{
+            box-shadow: 0 0 4px #c1bbbb;
+            .ant-card-body{
+                padding:$num20;
+            }
+            .money{
+                margin-left: $num5;
+                color:$block;
+                font-weight: 700;
+            }
+            .compare{
+                height: 100%;
+                background: yellow;
+            }
+        }
+    }
+}

@@ -7,4 +7,12 @@ export default [
             needLogin:false
         }
     },
+    {
+        path: '/echartslist',
+        name: 'echartslist',
+        component: ()=>import(/*webpackChunkName: "Orderlist"*/'@/views/Echarts/echartslist.vue'),
+        meta:{
+            needLogin:false
+        }
+    },
 ]

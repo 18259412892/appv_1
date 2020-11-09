@@ -41,6 +41,10 @@ export default  [
                 {
                     name:'Nestedpies',
                     path:'/Nestedpies'
+                },
+                 {
+                    name:'报表页面',
+                    path:'/echartslist'
                 }
             ]
         }

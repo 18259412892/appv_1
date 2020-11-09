@@ -47,13 +47,7 @@
                  item.labeKey &&item.labeKey.input,
                     {
                         initialValue:  (setValue && item.labeKey &&  setValue[item.labeKey.input]) || '',
-                        rules: [
-                        {
-                            rules: item.rules,
-                            required: true,
-                            message: item.msg || '',
-                        },
-                        ],
+                        rules:item.rules,
                     },
                     ]" style="width: 100%">
 

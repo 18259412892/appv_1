@@ -23,11 +23,16 @@
                     color:#666;
                     
                 }
-                .emphasis{
-                    margin-left: 3px;
+            }
+            .emphasis{
+                margin-left: 3px;
+            }
+            .total-user-footer{
+                display: flex;
+                align-items: center;
+                .month{
+                    margin-left: 10px;
                 }
-               
-                
             }
             
         }

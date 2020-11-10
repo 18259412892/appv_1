@@ -1,7 +1,7 @@
 @include blockquote(echarts-top-view) {
     &{
         .list{
-            box-shadow: 0 0 4px #c1bbbb;
+            border:solid 1px #eee;
             .ant-card-body{
                 padding:$num20;
             }
@@ -10,10 +10,26 @@
                 color:$block;
                 font-weight: 700;
             }
-            .compare{
+            .compare-wrapper{
                 height: 100%;
-                background: yellow;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                .compare{
+                    display: flex;
+                    align-items: center;
+                    font-size: $font-size12;
+                    margin-top: 3px;
+                    color:#666;
+                    
+                }
+                .emphasis{
+                    margin-left: 3px;
+                }
+               
+                
             }
+            
         }
     }
 }

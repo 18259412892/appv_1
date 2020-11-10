@@ -22,5 +22,12 @@
             font-size: $font-size;
             color:#666;
         }
+        .emphasis{
+            height: 100%;
+            font-size: $font-size12;
+            margin-top: 3px;
+            color:#333;
+            font-weight: 700;
+        }
     }
 }

@@ -84,7 +84,7 @@ export const commonOption = {
         series: [
             {
                 type: 'bar',
-                data: [200],
+                data: [100],
                 barWidth: 10,
                 stack: '总量',
                 itemStyle: {
@@ -103,22 +103,24 @@ export const commonOption = {
             {
                 type: 'custom',
                 stack: '总量',
-                data: [200],
+                data: [100],
                 renderItem: (params, api) => {
                     const value = api.value(0);
                     const endPoint = api.coord([value, 0])
                     return {
                         type: 'group',
                         children: [
+                            
                             {
                                 type: 'path',
                                 position: endPoint,
                                 shape: {
-                                    d: 'M512 341.333333l-298.666667 298.666667h597.333334z',
+                                    d: 'M209.656 344.031l298.604 335.938 306.084-335.839-604.688-0.099z',
                                     x: 0,
-                                    y: -25,
-                                    width: 20,
-                                    height: 20
+                                    y: -18,
+                                    width: 10,
+                                    height: 10,
+                                    layout: 'cover'
                                 },
                                 style: {
                                     fill: '#22c3aa'
@@ -128,16 +130,17 @@ export const commonOption = {
                                 type: 'path',
                                 position: endPoint,
                                 shape: {
-                                    d: 'M209.656 344.031l298.604 335.938 306.084-335.839-604.688-0.099z',
+                                    d: 'M512 341.333333l-298.666667 298.666667h597.333334z',
                                     x: 0,
-                                    y: 5,
-                                    width: 20,
-                                    height: 20
+                                    y: 10,
+                                    width: 10,
+                                    height: 10,
+                                    layout: 'cover'
                                 },
                                 style: {
                                     fill: '#22c3aa'
                                 }
-                            }
+                            },
                         ]
 
                     }

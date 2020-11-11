@@ -1,6 +1,9 @@
 <template>
 <div>
     <Topview />
+    <Slaesview />
+    <Bottomview />
+    <Mapview />
 </div>
 </template>
 

@@ -1,0 +1,74 @@
+@include blockquote(echarts-slaes-view) {
+    & {
+        margin-top: $num5;
+        .ant-card-head {
+            padding: 0;
+            border-bottom: 0;
+        }
+        .ant-card-body {
+            padding: 5px 20px 20px;
+        }
+        .ant-card-head-title {
+            font-weight: 400;
+            height: 58px;
+            padding-top: 10px;
+        }
+        &-header {
+            position: relative;
+        }
+        &-right-menu {
+            position: absolute;
+            top: 3px;
+            right: 50px;
+        }
+        &-echarts{
+            display: flex;
+            height: 350px;
+            .echarts{
+                flex: 0 0 70%;
+                width:100%;
+                height: 100%;
+                margin-right: $num20;
+            }
+            .list{
+                flex: 1;
+                width:100%;
+                height:100%;
+                .title{
+                    font-size: $font-size12;
+                    color:#000;
+                    font-weight: 500;
+                    margin-top:$num10;
+                }
+                .item{
+                    display: flex;
+                    height:$num30;
+                    line-height: $num30;
+                    align-items: center;
+                    margin-top:15px;
+                    .no{
+                       display: flex;
+                       justify-content: center;
+                       align-items: center;
+                       width: $num20;
+                       height: $num20;
+                    }
+                    .active{
+                        background: black;
+                        color:#fff;
+                        border-radius: 50%;
+                        font-weight: 500;
+                    }
+                    .name{
+                        margin-left: $num10;
+                        color:#333;
+                    }
+                    .money{
+                        flex:1;
+                        text-align: right;
+                    }
+                }
+            }
+        }
+    }
+}

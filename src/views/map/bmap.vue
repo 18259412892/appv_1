@@ -204,7 +204,7 @@ export default {
                 return `${v.data.name}- ${v.data.value[2]}`
             },
             positions: "right",
-            show: true,
+            show: false,
           },
           hoverAnimation: true,
           emphasis: {

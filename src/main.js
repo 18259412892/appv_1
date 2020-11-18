@@ -8,9 +8,12 @@ import '@/assets/styles/index.scss'
 import './plugins/vcharts'
 Vue.config.productionTip = false
 Vue.use(Antd)
+import VueEcharts from 'vue-echarts';
 import echarts from 'echarts'
 Vue.prototype.$echarts = echarts
 import './packges/Echarts/echartscss.js'
+
+Vue.component('vue-echarts', VueEcharts)
 
 new Vue({
   router,

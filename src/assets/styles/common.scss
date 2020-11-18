@@ -1,32 +1,38 @@
-*{
-    margin:0;
-    padding:0;
+* {
+    margin: 0;
+    padding: 0;
 }
-body,#app {
+body,
+#app {
     font-size: 100%;
     font-weight: 100;
     height: 100%;
-    color:#141414;
+    color: #141414;
 }
 .ant-layout-content {
     min-height: calc(100vh - 60px);
-    background:#fdfbfb;
+    background: #fdfbfb;
     padding: 20px;
 }
 
-.increase{
-    width:0;
+.increase {
+    width: 0;
     height: 0;
     border-width: 3px;
-    border-color:transparent transparent red transparent ;
+    border-color: transparent transparent red transparent;
     border-style: solid;
-    margin: 0 0  3px 5px;
+    margin: 0 0 3px 5px;
 }
-.decrease{
-    width:0;
+.decrease {
+    width: 0;
     height: 0;
     border-width: 3px;
-    border-color: green transparent  transparent  transparent ;
+    border-color: green transparent transparent transparent;
     border-style: solid;
-    margin:3px 0 0   5px;
+    margin: 3px 0 0 5px;
+}
+
+.echarts {
+    width: 100% !important;
+    height: calc(100vh - 60px) !important;
 }

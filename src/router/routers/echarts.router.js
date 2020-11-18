@@ -15,4 +15,12 @@ export default [
             needLogin:false
         }
     },
+    {
+        path: '/bmap',
+        name: 'bmap',
+        component: ()=>import(/*webpackChunkName: "Orderlist"*/'@/views/map/bmap.vue'),
+        meta:{
+            needLogin:false
+        }
+    },
 ]

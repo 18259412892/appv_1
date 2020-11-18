@@ -45,6 +45,10 @@ export default  [
                  {
                     name:'报表页面',
                     path:'/echartslist'
+                },
+                {
+                    name:'地图',
+                    path:'/bmap'
                 }
             ]
         }
